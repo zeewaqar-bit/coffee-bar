@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Brew & Bean - Coffee Shop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Brew & Bean</h1>
+      <p>Your cozy coffee escape</p>
+      <a href="#menu" class="btn">View Menu</a>
+    </div>
+  </header>
+
+  <div style="text-align:center; padding: 1rem;">
+    <button class="btn" onclick="adminLogin()">Admin Login</button>
+  </div>
+
+  <main>
+    <section id="menu" class="menu">
+      <h2>Our Menu</h2>
+      <input type="text" id="search" placeholder="Search coffee..." class="search-input" oninput="renderMenu()" />
+      <div class="menu-items" id="menu-items"></div>
+    </section>
+
+    <section class="cart">
+      <h2>Your Cart</h2>
+      <div id="cart-items"></div>
+      <p><strong>Total: $<span id="total-price">0.00</span></strong></p>
+      <button onclick="checkout()" class="btn">Checkout</button>
+    </section>
+
+    <!-- Receipt Section -->
+    <section class="receipt" id="receipt" style="display:none;">
+      <h2>Receipt</h2>
+      <div id="receipt-details"></div>
+      <button class="btn" onclick="printReceipt()">Print</button>
+    </section>
+
+    <section class="admin">
+      <h2>Admin Panel - Add Coffee</h2>
+      <form id="admin-form">
+        <input type="text" id="name" placeholder="Coffee Name" required />
+        <input type="number" step="0.01" id="price" placeholder="Price" required />
+        <input type="text" id="image" placeholder="Image URL" required />
+        <button type="submit" class="btn">Add Coffee</button>
+      </form>
+    </section>
+
+    <section class="inquiry">
+      <h2>Have a Question?</h2>
+      <form id="inquiry-form">
+        <input type="text" id="inq-name" placeholder="Your Name" required />
+        <input type="email" id="inq-email" placeholder="Your Email" required />
+        <textarea id="inq-message" placeholder="Message" required></textarea>
+        <button type="submit" class="btn">Send Inquiry</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Brew & Bean. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
